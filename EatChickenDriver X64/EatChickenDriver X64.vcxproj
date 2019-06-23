@@ -226,10 +226,19 @@
     <FilesToPackage Include="@(Inf->'%(CopyOutput)')" Condition="'@(Inf)'!=''" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Cr3Register.h" />
+    <ClInclude Include="FMemory.h" />
     <ClInclude Include="Phytools.h" />
     <ClInclude Include="process.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FMemory.c" />
+    <CustomBuild Include="Cr3Register.asm">
+      <FileType>CppCode</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='W7X64|x64'">ml64 /Fo $(IntDir)%(fileName).obj /c %(fileName).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='W7X64|x64'">$(IntDir)%(fileName).obj</Outputs>
+    </CustomBuild>
     <ClCompile Include="Main.c" />
     <ClCompile Include="Phytools.c" />
     <ClCompile Include="process.c" />

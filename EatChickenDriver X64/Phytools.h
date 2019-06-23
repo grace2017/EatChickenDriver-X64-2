@@ -63,7 +63,6 @@ typedef union _MMPTE {
 	};
 } MMPTE,*PMMPTE;
 
-#define PXI_MASK (PXE_PER_PAGE - 1)
 #define MiGetPxeOffset(va) ((ULONG)(((ULONG_PTR)(va) >> PXI_SHIFT) & PXI_MASK))
 
 HardwarePte * NTAPI GetPxeAddress(__in PVOID VirtualAddress);

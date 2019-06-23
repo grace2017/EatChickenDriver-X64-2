@@ -1,7 +1,9 @@
 #ifndef __PROCESS_H_
 #define __PROCESS_H_
 
-#include <ntddk.h>
+#include <ntifs.h>
+
+#include "Common.h"
 
 #define _START_DEBUG
 
@@ -46,10 +48,14 @@ BOOLEAN IsDNF();
 BOOLEAN IsTASLogin();
 BOOLEAN IsNtQueryInformationProcess();
 
+VOID IsNotepad(IN Type_TestCallFun callFun);
+
 /*
 	根据进程名获取eprocess
 */
 ULONG64 GetProcessByName(IN PSTR procName);
+
+ULONG64 GetProcessCr3ByName(IN PSTR procName);
 
 /*
 	根据pid获取eprocess
@@ -65,29 +71,14 @@ ULONG GetProcessObjectTableByName(IN PSTR procName);
 ULONG GetProcessObjectTableByPid(IN ULONG pid);
 
 /*
-	获取当前进程的_HANDLE_TABLE
-
-	win7 x32：eprocess + 0x0f4
-*/
-ULONG GetCurrentProcessObjectTable();
-
-NTSTATUS SetDebugPort(IN ULONG process, IN ULONG val);
-
-/*
 	获取进程的页目录表基址
 */
 ULONG GetCurrentProcessDirectoryTableBase();
 VOID SetCurrentProcessDirectoryTableBase(IN ULONG val);
-ULONG GetProcessDirectoryTableBase(IN PEPROCESS process);
+ULONG GetProcessDirectoryTableBase(IN ULONG64 process);
 ULONG GetDirectoryTableBaseByPid(IN ULONG pid);
 ULONG GetDirectoryTableBaseByProcNameA(IN PSTR procName);
 ULONG GetDirectoryTableBaseByProcNameW(IN PWSTR procName);
-
-/*
-	获取进程的cr3
-*/
-ULONG GetCurrentProcessCR3();
-VOID SetCurrentProcessCR3(IN ULONG cr3Val);
 
 NTSTATUS AttachProcess(IN PEPROCESS process);
 NTSTATUS UnAttachProcess(IN PEPROCESS process);
