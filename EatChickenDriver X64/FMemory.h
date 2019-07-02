@@ -3,8 +3,8 @@
 
 #include "Common.h"
 
-NTSTATUS FReadProcessMemoryByName(IN PSTR procName, IN PVOID64 fromAddr, IN ULONG64 readSize, OUT PVOID64 Buffer);
+NTSTATUS KDR_ReadProcessMemory(ReadData readData, PVOID pIoBuffer, ULONG uOutLength);
 
-NTSTATUS FWriteProcessMemory(IN PVOID64 fromAddr, IN ULONG64 writeSize, IN PVOID64 Buffer);
+NTSTATUS KDR_WriteProcessMemory(WriteData writeData);
 
 #endif

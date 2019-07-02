@@ -1,14 +1,53 @@
-﻿生成启动时间为 2019/6/23 22:32:04。
-     1>项目“d:\Windows Driver\EatChickenDriver X64\EatChickenDriver X64\EatChickenDriver X64.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>CustomBuild:
-         Performing Custom Build Tools
-          Assembling: Cr3Register.asm
-         Microsoft (R) Macro Assembler (x64) Version 12.00.21005.1
-         Copyright (C) Microsoft Corporation.  All rights reserved.
-         
-       ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Ix64\W7X64\ /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D _WIN64 /D _AMD64_ /D AMD64 /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D _WIN32_WINNT=0x0601 /D WINVER=0x0601 /D WINNT=1 /D NTDDI_VERSION=0x06010000 /D DBG=1 /GF /Gm- /Zp8 /GS /Gy /fp:precise /Zc:wchar_t- /Zc:forScope- /GR- /Fo"x64\W7X64\\" /Fd"x64\W7X64\vc120.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"D:\Program Files (x86)\Windows Kits\8.1\Include\Shared\warning.h" /errorReport:prompt /kernel -cbstring -d2epilogunwind /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ FMemory.c Main.c Phytools.c process.c
+﻿生成启动时间为 2019/7/2 9:44:41。
+     1>项目“D:\Windows Driver\EatChickenDriver X64\EatChickenDriver X64\EatChickenDriver X64.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Ix64\W7X64\ /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D _WIN64 /D _AMD64_ /D AMD64 /D DEPRECATE_DDK_FUNCTIONS=1 /D MSC_NOOPT /D _WIN32_WINNT=0x0601 /D WINVER=0x0601 /D WINNT=1 /D NTDDI_VERSION=0x06010000 /D DBG=1 /GF /Gm- /Zp8 /GS /Gy /fp:precise /Zc:wchar_t- /Zc:forScope- /GR- /Fo"x64\W7X64\\" /Fd"x64\W7X64\vc120.pdb" /Gz /wd4748 /wd4603 /wd4627 /wd4986 /wd4987 /wd4996 /FI"D:\Program Files (x86)\Windows Kits\8.1\Include\Shared\warning.h" /errorReport:prompt /kernel -cbstring -d2epilogunwind /d1import_no_registry /d2AllowCompatibleILVersions /d2Zi+ FMemory.c Main.c process.c
          FMemory.c
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(17): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(18): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(19): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(20): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(21): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(22): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(23): warning C4201: 使用了非标准扩展 : 无名称的结构/联合
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(27): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(28): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(29): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(30): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(31): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(32): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(33): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(34): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(35): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(36): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(37): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(38): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(39): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(40): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(41): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(42): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(50): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(51): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(52): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(53): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(54): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(55): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(56): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(57): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(58): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(59): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(60): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(61): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(62): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
+     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(63): warning C4201: 使用了非标准扩展 : 无名称的结构/联合
+     1>FMemory.c(48): warning C4047: “函数”:“ULONG64”与“PULONG64”的间接级别不同
+     1>FMemory.c(48): warning C4024: “GetDataVirtualAddressByCr3”: 形参和实参 1 的类型不同
+     1>FMemory.c(56): warning C4022: “memcpy”: 指针与实参 1 不匹配
+     1>FMemory.c(58): warning C4022: “MmUnmapIoSpace”: 指针与实参 1 不匹配
+     1>FMemory.c(106): warning C4047: “函数”:“ULONG64”与“PULONG64”的间接级别不同
+     1>FMemory.c(106): warning C4024: “GetDataVirtualAddressByCr3”: 形参和实参 1 的类型不同
+     1>FMemory.c(117): warning C4022: “memcpy”: 指针与实参 2 不匹配
+     1>FMemory.c(119): warning C4022: “MmUnmapIoSpace”: 指针与实参 1 不匹配
          Main.c
      1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(17): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
      1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(18): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
@@ -47,70 +86,35 @@
      1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(61): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
      1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(62): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
      1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(63): warning C4201: 使用了非标准扩展 : 无名称的结构/联合
-     1>Main.c(11): warning C4022: “GetPxeAddress”: 指针与实参 1 不匹配
-     1>Main.c(12): warning C4022: “GetPpeAddress”: 指针与实参 1 不匹配
-     1>Main.c(13): warning C4022: “GetPdeAddress”: 指针与实参 1 不匹配
-     1>Main.c(14): warning C4022: “GetPteAddress”: 指针与实参 1 不匹配
-     1>Main.c(57): warning C4022: “FReadProcessMemoryByName”: 指针与实参 2 不匹配
-         Phytools.c
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(17): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(18): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(19): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(20): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(21): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(22): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(23): warning C4201: 使用了非标准扩展 : 无名称的结构/联合
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(27): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(28): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(29): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(30): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(31): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(32): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(33): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(34): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(35): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(36): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(37): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(38): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(39): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(40): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(41): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(42): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(50): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(51): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(52): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(53): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(54): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(55): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(56): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(57): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(58): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(59): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(60): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(61): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(62): warning C4214: 使用了非标准扩展 : 整形以外的位域类型
-     1>d:\windows driver\eatchickendriver x64\eatchickendriver x64\Phytools.h(63): warning C4201: 使用了非标准扩展 : 无名称的结构/联合
-     1>Phytools.c(63): warning C4133: “初始化”: 从“HardwarePte *”到“PMMPTE”的类型不兼容
-     1>Phytools.c(64): warning C4133: “初始化”: 从“HardwarePte *”到“PMMPTE”的类型不兼容
+     1>Main.c(27): warning C4022: “GetPxeAddress”: 指针与实参 1 不匹配
+     1>Main.c(28): warning C4022: “GetPpeAddress”: 指针与实参 1 不匹配
+     1>Main.c(29): warning C4022: “GetPdeAddress”: 指针与实参 1 不匹配
+     1>Main.c(30): warning C4022: “GetPteAddress”: 指针与实参 1 不匹配
+     1>Main.c(48): warning C4100: “pDevObj”: 未引用的形参
+     1>Main.c(60): warning C4100: “pDevObj”: 未引用的形参
+     1>Main.c(164): warning C4133: “初始化”: 从“char [27]”到“PSTRING64”的类型不兼容
+     1>Main.c(72): warning C4100: “pDevObj”: 未引用的形参
+     1>Main.c(181): warning C4047: “初始化”:“PULONG64”与“ULONG64”的间接级别不同
          process.c
      1>process.c(46): warning C4047: “初始化”:“ULONG64”与“void *”的间接级别不同
      1>process.c(109): warning C4047: “初始化”:“ULONG64”与“void *”的间接级别不同
      1>process.c(155): warning C4047: “初始化”:“PULONG64”与“ULONG64”的间接级别不同
+     1>process.c(174): warning C4047: “初始化”:“ULONG64”与“void *”的间接级别不同
          正在生成代码...
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"d:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys" /VERSION:"6.3" /INCREMENTAL:NO /NOLOGO /WX /SECTION:"INIT,d" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\BufferOverflowK.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\ntoskrnl.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\hal.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\wmilib.lib" /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"d:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.pdb" /SUBSYSTEM:NATIVE,"6.01" /Driver /OPT:REF /OPT:ICF /ENTRY:"GsDriverEntry" /RELEASE /IMPLIB:"d:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X64 /PROFILE /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 /osversion:6.3 /pdbcompress /debugtype:pdata x64\W7X64\Cr3Register.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys" /VERSION:"6.3" /INCREMENTAL:NO /NOLOGO /WX /SECTION:"INIT,d" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\BufferOverflowK.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\ntoskrnl.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\hal.lib" "D:\Program Files (x86)\Windows Kits\8.1\lib\win7\KM\x64\wmilib.lib" /NODEFAULTLIB /MANIFEST:NO /DEBUG /PDB:"D:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.pdb" /SUBSYSTEM:NATIVE,"6.01" /Driver /OPT:REF /OPT:ICF /ENTRY:"GsDriverEntry" /RELEASE /IMPLIB:"D:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.lib" /MERGE:"_TEXT=.text;_PAGE=PAGE" /MACHINE:X64 /PROFILE /kernel /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 /osversion:6.3 /pdbcompress /debugtype:pdata x64\W7X64\Cr3Register.obj
          x64\W7X64\FMemory.obj
          x64\W7X64\Main.obj
          x64\W7X64\Phytools.obj
          x64\W7X64\process.obj
-         EatChickenDriver X64.vcxproj -> d:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys
+         EatChickenDriver X64.vcxproj -> D:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys
        DriverTestSign:
          D:\Program Files (x86)\Windows Kits\8.1\bin\x86\signtool.exe sign /ph /sha1 "E10EEA8FA4E0A81FC9523BDB163E6F1A6CBED4EA" 
          Done Adding Additional Store
-         Successfully signed: d:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys
+         Successfully signed: D:\Windows Driver\EatChickenDriver X64\x64\W7X64\EatChickenDriverX64.sys
          
-     1>已完成生成项目“d:\Windows Driver\EatChickenDriver X64\EatChickenDriver X64\EatChickenDriver X64.vcxproj”(Rebuild 个目标)的操作。
+     1>已完成生成项目“D:\Windows Driver\EatChickenDriver X64\EatChickenDriver X64\EatChickenDriver X64.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.04
+已用时间 00:00:01.43

@@ -70,6 +70,29 @@ HardwarePte * NTAPI GetPpeAddress(__in PVOID VirtualAddress);
 HardwarePte * NTAPI GetPdeAddress(__in PVOID VirtualAddress);
 HardwarePte * NTAPI GetPteAddress(__in PVOID VirtualAddress);
 
+NTSTATUS NTAPI GetPdptePhysicsAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_phyAddr);
+NTSTATUS NTAPI GetPdpteVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_virAddr);
+
+NTSTATUS NTAPI GetPdePhysicsAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_phyAddr);
+NTSTATUS NTAPI GetPdeVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_virAddr);
+
+NTSTATUS NTAPI GetPtePhysicsAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_phyAddr);
+NTSTATUS NTAPI GetPteVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_virAddr);
+
+NTSTATUS NTAPI GetDataPhysicsAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_phyAddr);
+NTSTATUS NTAPI GetDataVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_virAddr);
+
+NTSTATUS NTAPI MySteryReadMemoryByCr3(IN ULONG64 cr3Val, IN PVOID64 readAddr, IN ULONG64 readSize, OUT PVOID64 p_buff);
+NTSTATUS NTAPI MySteryWriteMemoryByCr3(IN ULONG64 cr3Val, IN PVOID64 writeAddr, IN ULONG64 writeSize);
+
+ULONG64 NTAPI GetPtePhysicsAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);
+ULONG64 NTAPI GetPteVirtualAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);
+
+ULONG64 NTAPI GetDataPhysicsAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);
+ULONG64 NTAPI GetDateVirtualAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);
+
+NTSTATUS NTAPI SetPxePhyAddrValid(IN ULONG64 address, IN PULONG64 cr3Val, OUT ULONG64 pxePhyAddr);
+
 void SetAddrToLineAddr(PVOID addr, ULONG64 lineAddr, ULONG sizeOfImage);
 
 #endif

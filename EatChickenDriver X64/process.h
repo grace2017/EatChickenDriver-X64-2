@@ -56,6 +56,7 @@ VOID IsNotepad(IN Type_TestCallFun callFun);
 ULONG64 GetProcessByName(IN PSTR procName);
 
 ULONG64 GetProcessCr3ByName(IN PSTR procName);
+ULONG64 GetProcessCr3ByPid(IN ULONG64 pid);
 
 /*
 	根据pid获取eprocess

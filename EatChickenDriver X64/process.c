@@ -169,6 +169,46 @@ ULONG64 GetProcessCr3ByName(IN PSTR procName)
 	return result;
 }
 
+ULONG64 GetProcessCr3ByPid(IN ULONG64 pid)
+{
+	ULONG64 result = NULL;
+
+	if (pid <= 0)
+	{
+#ifdef _START_DEBUG
+		DbgPrint("GetProcessCr3ByPid: pid=%d \n", pid);
+#endif
+
+		return result;
+	}
+
+	ULONG64 currentProcess = 0;
+	ULONG64 tmpProcess = 0;
+
+	PLIST_ENTRY pProcessListHead = NULL;
+	PLIST_ENTRY pProcessNext = NULL;
+
+	currentProcess = (ULONG64)PsGetCurrentProcess();
+	tmpProcess = currentProcess;
+
+	pProcessListHead = (PLIST_ENTRY)(currentProcess + 0x188);
+	pProcessNext = pProcessListHead;
+
+	do {
+		if (pid == *(PULONG64)(tmpProcess + 0x180)) {
+			return *(PULONG64)(tmpProcess + 0x28);
+		}
+
+		pProcessNext = pProcessNext->Blink;
+		tmpProcess = (ULONG64)pProcessNext - 0x188;
+	} while (pProcessListHead != pProcessNext);
+
+#ifdef _START_DEBUG
+	DbgPrint("进程[%d]不存在，可能被断链、未启动 \n", pid);
+#endif
+
+	return result;
+}
 
 VOID IsNotepad(IN Type_TestCallFun callFun)
 {
@@ -183,7 +223,7 @@ VOID IsNotepad(IN Type_TestCallFun callFun)
 	PLIST_ENTRY pProcessListHead = NULL;
 	PLIST_ENTRY pProcessNext = NULL;
 
-	RtlInitAnsiString(&cutProcessName, "notepad.exe");
+	RtlInitAnsiString(&cutProcessName, "TslGame.exe");
 
 	currentProcess = (ULONG64)PsGetCurrentProcess();
 	tmpProcess = currentProcess;
@@ -197,7 +237,7 @@ VOID IsNotepad(IN Type_TestCallFun callFun)
 
 		if (0 != *(PUCHAR)processNameAddr) {
 			if (0 == RtlCompareString(&cutProcessName, &tmpProcessName, FALSE)) {
-				callFun();
+				callFun(tmpProcess);
 			}
 		}
 
@@ -205,3 +245,4 @@ VOID IsNotepad(IN Type_TestCallFun callFun)
 		tmpProcess = (ULONG64)pProcessNext - 0x188;
 	} while (pProcessListHead != pProcessNext);
 }
+
