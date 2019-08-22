@@ -661,3 +661,50 @@ NTSTATUS NTAPI MySteryReadMemoryByCr3(
 
 	return status;
 }
+
+NTSTATUS NTAPI GetPdpteByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pdpte)
+{
+	return 0;
+}
+
+NTSTATUS NTAPI GetPdeByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pde)
+{
+	NTSTATUS status = STATUS_SUCCESS;
+
+	// 验证参数
+	if (NULL == p_pde)
+	{
+#ifdef _START_DEBUG
+		DbgPrint("GetPdeByCr3:接收返回结果的参数为NULL \n");
+#endif
+
+		return STATUS_UNSUCCESSFUL;
+	}
+
+	// 获取PDPTE线性地址
+	ULONG64 pdpteVirAddr = 0;
+
+	if (!NT_SUCCESS(GetPdpteVirtualAddressByCr3(address, cr3Val, &pdpteVirAddr)))
+	{
+#ifdef _START_DEBUG
+		DbgPrint("GetPdeByCr3:获取PDPTE线性地址失败 \n");
+#endif
+
+		return STATUS_UNSUCCESSFUL;
+	};
+
+	// 计算PML4、PDPTE index
+	ULONG64 pdeIndex = (address >> 21) & 0x1ff;
+
+	ULONG64 pdePhyAddr = *(PULONG64)pdpteVirAddr;
+
+	// 返回结果
+	*p_pde = pdePhyAddr;
+
+	// 释放映射
+	MmUnmapIoSpace(pdpteVirAddr, 8);
+
+	return status;
+}
+
+NTSTATUS NTAPI GetPteByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pte);

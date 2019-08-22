@@ -82,8 +82,9 @@ NTSTATUS NTAPI GetPteVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, 
 NTSTATUS NTAPI GetDataPhysicsAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_phyAddr);
 NTSTATUS NTAPI GetDataVirtualAddressByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_virAddr);
 
-NTSTATUS NTAPI MySteryReadMemoryByCr3(IN ULONG64 cr3Val, IN PVOID64 readAddr, IN ULONG64 readSize, OUT PVOID64 p_buff);
-NTSTATUS NTAPI MySteryWriteMemoryByCr3(IN ULONG64 cr3Val, IN PVOID64 writeAddr, IN ULONG64 writeSize);
+NTSTATUS NTAPI GetPdpteByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pdpte);
+NTSTATUS NTAPI GetPdeByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pde);
+NTSTATUS NTAPI GetPteByCr3(IN ULONG64 address, IN ULONG64 cr3Val, OUT PULONG64 p_pte);
 
 ULONG64 NTAPI GetPtePhysicsAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);
 ULONG64 NTAPI GetPteVirtualAddress(IN ULONG64 address, IN PULONG64 pdeVirtualAddress);

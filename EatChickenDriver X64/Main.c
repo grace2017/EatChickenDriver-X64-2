@@ -4,12 +4,7 @@
 #include "Phytools.h"
 #include "FMemory.h"
 
-PULONG64 g_cr3VirAddr;
-PULONG64 g_pxeVirAddr;
-PULONG64 g_pdpteVirAddr;
-PULONG64 g_pdeVirAddr;
-PULONG64 g_pteVirAddr;
-PULONG64 g_dataVirAddr;
+//#define __CREATE_DEVIDE_
 
 #define DEVICE_NAME L"\\Device\\SecondProcess"
 #define SYMBOLICLINK_NAME L"\\??\\SecondProcess"
@@ -32,15 +27,13 @@ VOID test1(VOID) {
 
 VOID DriverUnload(PDRIVER_OBJECT pDriverObj)
 {
-	UNREFERENCED_PARAMETER(pDriverObj);
-
+#ifdef __CREATE_DEVIDE_
 	UNICODE_STRING SymbolicLinkName = { 0 };
 	RtlInitUnicodeString(&SymbolicLinkName, SYMBOLICLINK_NAME);
 
 	IoDeleteSymbolicLink(&SymbolicLinkName);
 	IoDeleteDevice(pDriverObj->DeviceObject);
-
-	//MmUnmapIoSpace(g_dataVirAddr, 8);
+#endif
 
 	DbgPrint("驱动已卸载 \n");
 }
@@ -192,62 +185,23 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING pRegistryString)
 	UNREFERENCED_PARAMETER(pDriverObj);
 	UNREFERENCED_PARAMETER(pRegistryString);
 
-	//IsNotepad(IsNotepadCallBack);
+	ULONG64 val = 0x4fa7d847;
+	ULONG64 cr3 = GetProcessCr3ByPid(1);
 	
-	//DbgBreakPoint();
+	HardwarePte a = {0};
 
-	//DbgPrint("CR3: 0x%p \n", GetProcessCr3ByName("notepad.exe"));
+	GetPdeByCr3(val, cr3, &a);
 
-
-	//----------
-	/*PVOID64 buff = ExAllocatePool(NonPagedPool, 8);
-	if (NULL == buff)
-	{
-		DbgPrint("ExAllocatePool failed \n");
-
-		return STATUS_UNSUCCESSFUL;
-	}
-	else 
-	{
-		RtlZeroMemory(buff, 8);
-
-		FReadProcessMemoryByName("notepad.exe", 0x7FFFFFDE354, 8, buff);
-
-		DbgPrint("buff: %ws \n", buff);
-	}*/
-
-	/*
-		1: kd> !vtop 4d250000  0x31f7c8
-		Amd64VtoP: Virt 00000000`0031f7c8, pagedir 4d250000
-		Amd64VtoP: PML4E 4d250000
-		Amd64VtoP: PDPE 4c714000
-		Amd64VtoP: PDE 4d118008
-		Amd64VtoP: PTE 4c0688f8
-		Amd64VtoP: Mapped phys 4d2897c8
-	*/
-
-	//ULONG64 cr3 = 0x221c4a000;
-
-	//ULONG64 readAddr = 0x4afe94;
-	//ULONG64 tmp = 0;
-
-	//if (NT_SUCCESS(GetDataVirtualAddressByCr3(readAddr, cr3, &g_dataVirAddr)))
-	//{
-	//	DbgPrint("[修改前]GetPdePhysicsAddress=0x%llx，val=%llx \n", g_dataVirAddr, *(PULONG)g_dataVirAddr);
-
-	//	*(PULONG)g_dataVirAddr = 0x11223344;
-
-	//	//DbgPrint("[修改后]GetPdePhysicsAddress=0x%llx，val=%llx \n", g_dataVirAddr, *(PULONG)g_dataVirAddr);
-	//}
-	//else
-	//{
-	//	DbgPrint("GetPdptePhysicsAddress fail \n");
-	//}
-
-	//MySteryReadMemoryByCr3(cr3, readAddr, 8, &tmp);
-
-	//IsNotepad(IsNotepadCallBack);
-
+	DbgPrint("valid=%d \n", a.valid);
+	DbgPrint("write=%d \n", a.write);
+	DbgPrint("owner=%d \n", a.owner);
+	DbgPrint("write_through=%d \n", a.write_through);
+	DbgPrint("cache_disable=%d \n", a.cache_disable);
+	DbgPrint("accessed=%d \n", a.accessed);
+	DbgPrint("dirty=%d \n", a.dirty);
+	DbgPrint("large_page=%d \n", a.large_page);
+	
+#ifdef __CREATE_DEVIDE_
 	PDEVICE_OBJECT pDeviceObj = NULL;
 	UNICODE_STRING Devicename;
 	UNICODE_STRING SymbolicLinkName;
@@ -276,8 +230,66 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING pRegistryString)
 	pDriverObj->MajorFunction[IRP_MJ_CREATE] = IrpCreateProc;
 	pDriverObj->MajorFunction[IRP_MJ_CLOSE] = IrpCloseProc;
 	pDriverObj->MajorFunction[IRP_MJ_DEVICE_CONTROL] = IrpDeviceContrlProc;
+#endif
 
 	pDriverObj->DriverUnload = DriverUnload;
 
 	return STATUS_SUCCESS;
 }
+
+
+//IsNotepad(IsNotepadCallBack);
+
+//DbgBreakPoint();
+
+//DbgPrint("CR3: 0x%p \n", GetProcessCr3ByName("notepad.exe"));
+
+
+//----------
+/*PVOID64 buff = ExAllocatePool(NonPagedPool, 8);
+if (NULL == buff)
+{
+DbgPrint("ExAllocatePool failed \n");
+
+return STATUS_UNSUCCESSFUL;
+}
+else
+{
+RtlZeroMemory(buff, 8);
+
+FReadProcessMemoryByName("notepad.exe", 0x7FFFFFDE354, 8, buff);
+
+DbgPrint("buff: %ws \n", buff);
+}*/
+
+/*
+1: kd> !vtop 4d250000  0x31f7c8
+Amd64VtoP: Virt 00000000`0031f7c8, pagedir 4d250000
+Amd64VtoP: PML4E 4d250000
+Amd64VtoP: PDPE 4c714000
+Amd64VtoP: PDE 4d118008
+Amd64VtoP: PTE 4c0688f8
+Amd64VtoP: Mapped phys 4d2897c8
+*/
+
+//ULONG64 cr3 = 0x221c4a000;
+
+//ULONG64 readAddr = 0x4afe94;
+//ULONG64 tmp = 0;
+
+//if (NT_SUCCESS(GetDataVirtualAddressByCr3(readAddr, cr3, &g_dataVirAddr)))
+//{
+//	DbgPrint("[修改前]GetPdePhysicsAddress=0x%llx，val=%llx \n", g_dataVirAddr, *(PULONG)g_dataVirAddr);
+
+//	*(PULONG)g_dataVirAddr = 0x11223344;
+
+//	//DbgPrint("[修改后]GetPdePhysicsAddress=0x%llx，val=%llx \n", g_dataVirAddr, *(PULONG)g_dataVirAddr);
+//}
+//else
+//{
+//	DbgPrint("GetPdptePhysicsAddress fail \n");
+//}
+
+//MySteryReadMemoryByCr3(cr3, readAddr, 8, &tmp);
+
+//IsNotepad(IsNotepadCallBack);
